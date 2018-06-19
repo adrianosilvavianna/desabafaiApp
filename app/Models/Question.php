@@ -7,15 +7,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class Question extends Model
 {
-    public function user(){
+    protected $guarded = [];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function user()
+    {
         return$this->belongsTo(User::class);
     }
 
-    public function replies(){
+    public function replies()
+    {
         return $this->hasMany(Reply::class);
     }
 
-    public function category(){
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 

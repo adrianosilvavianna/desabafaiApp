@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Models\Likes::class, function (Faker $faker) {
+$factory->define(App\Models\Like::class, function (Faker $faker) {
     return [
         //
     ];

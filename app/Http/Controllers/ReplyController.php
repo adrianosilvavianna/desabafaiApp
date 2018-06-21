@@ -39,7 +39,7 @@ class ReplyController extends Controller
 
     /**
      * Display the specified resource.
-     *
+     *gma
      * @param  \App\Models\Reply  $reply
      * @return \Illuminate\Http\Response
      */

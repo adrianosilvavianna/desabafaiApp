@@ -2,29 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ReplyResource;
+use App\Models\Question;
 use App\Models\Reply;
 use Illuminate\Http\Request;
 
 class ReplyController extends Controller
 {
+    private $reply;
+
+    public function __construct(Reply $reply)
+    {
+        $this->reply = $reply;
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Question $question)
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return ReplyResource::collection($question->replies);
     }
 
     /**
@@ -35,7 +34,7 @@ class ReplyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -45,17 +44,6 @@ class ReplyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(Reply $reply)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Reply  $reply
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Reply $reply)
     {
         //
     }

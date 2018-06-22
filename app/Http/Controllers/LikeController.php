@@ -3,39 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Like;
+use App\Models\Reply;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class LikeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function likeIt(Reply $reply)
     {
-        //
+        $reply->like()->create([
+//            'user_id' => auth()->user()->id,
+                'user_id' => '3'
+        ]);
+        return response('Created', Response::HTTP_CREATED);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function unLikeIt(Reply $reply)
     {
-
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Like  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Like $likes)
-    {
-        //
+//        $reply->like()->where(['user_id', auth()->user()->id])->first()->delete();
+        $reply->like()->where('user_id', 3)->first()->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

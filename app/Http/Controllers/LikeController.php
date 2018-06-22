@@ -18,16 +18,6 @@ class LikeController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -35,41 +25,7 @@ class LikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Like  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Like $likes)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Like  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Like $likes)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Like  $likes
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Like $likes)
-    {
-        //
     }
 
     /**

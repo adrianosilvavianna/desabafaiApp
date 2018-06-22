@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RequestReply;
 use App\Http\Resources\ReplyResource;
 use App\Models\Question;
 use App\Models\Reply;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class ReplyController extends Controller
 {
@@ -32,9 +34,10 @@ class ReplyController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RequestReply $request)
     {
-
+        $reply = $this->reply->create($request->all());
+        return response(new ReplyResource($reply), Response::HTTP_CREATED);
     }
 
     /**
@@ -45,7 +48,7 @@ class ReplyController extends Controller
      */
     public function show(Reply $reply)
     {
-        //
+        return new ReplyResource($reply);
     }
 
     /**
@@ -55,9 +58,10 @@ class ReplyController extends Controller
      * @param  \App\Models\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Reply $reply)
+    public function update(RequestReply $request, Question $question, Reply $reply)
     {
-        //
+        $reply->update($request->all());
+        return \response('Update', Response::HTTP_ACCEPTED);
     }
 
     /**
@@ -66,8 +70,9 @@ class ReplyController extends Controller
      * @param  \App\Models\Reply  $reply
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Reply $reply)
+    public function destroy(Question $question, Reply $reply)
     {
-        //
+        $reply->delete();
+        return response(null, Response::HTTP_NO_CONTENT);
     }
 }

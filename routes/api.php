@@ -11,12 +11,18 @@ Route::group([
     Route::post('refresh',  'Auth\AuthController@refresh');
     Route::post('me',       'Auth\AuthController@me');
     Route::post('payload',       'Auth\AuthController@payload');
+    Route::post('signup',       'Auth\AuthController@signUp');
 
 });
 
-Route::apiResource("/question",                  "QuestionController");
-Route::apiResource("/category",                  "CategoryController");
-Route::apiResource("/question/{question}/reply", "ReplyController");
+Route::group(['middleware' => 'jwt'], function(){
 
-Route::get('/like/{reply}',                      "LikeController@likeIt");
-Route::delete('/like/{reply}',                   "LikeController@unLikeIt");
+    Route::apiResource("/question",                  "QuestionController");
+    Route::apiResource("/category",                  "CategoryController");
+    Route::apiResource("/question/{question}/reply", "ReplyController");
+
+    Route::get('/like/{reply}',                      "LikeController@likeIt");
+    Route::delete('/like/{reply}',                   "LikeController@unLikeIt");
+
+});
+

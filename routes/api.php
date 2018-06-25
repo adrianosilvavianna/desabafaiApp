@@ -10,6 +10,7 @@ Route::group([
     Route::post('logout',   'Auth\AuthController@logout');
     Route::post('refresh',  'Auth\AuthController@refresh');
     Route::post('me',       'Auth\AuthController@me');
+    Route::post('payload',       'Auth\AuthController@payload');
 
 });
 

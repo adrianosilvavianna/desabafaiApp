@@ -6,12 +6,11 @@
 </head>
 <body>
 <div id="app">
+
     <v-app>
-
-
         <app-home></app-home>
-
     </v-app>
+
 </div>
 
 <script src="{{ asset('js/app.js') }}"></script>

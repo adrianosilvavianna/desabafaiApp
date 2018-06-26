@@ -1,15 +1,31 @@
 <template>
 
-
     <v-toolbar>
         <!--<v-toolbar-side-icon></v-toolbar-side-icon>-->
         <v-toolbar-title>Desabafai</v-toolbar-title>
         <v-spacer></v-spacer>
-        <v-toolbar-items class="hidden-sm-and-down">
-            <v-btn flat>Link One</v-btn>
-            <v-btn flat>Link Two</v-btn>
-            <v-btn flat>Link Three</v-btn>
-        </v-toolbar-items>
+        <div class="hidden-sm-and-down">
+
+            <router-link to="#">
+                <v-btn flat>Forum</v-btn>
+            </router-link>
+
+            <router-link to="#">
+                <v-btn flat>Pergunte</v-btn>
+            </router-link>
+
+            <router-link to="#">
+                <v-btn flat>Category</v-btn>
+            </router-link>
+
+            <router-link to="/login">
+                <v-btn flat>Login</v-btn>
+            </router-link>
+
+
+
+        </div>
+
     </v-toolbar>
 
 </template>

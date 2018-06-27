@@ -11,10 +11,6 @@
             </router-link>
 
             <router-link to="#">
-                <v-btn flat>Pergunte</v-btn>
-            </router-link>
-
-            <router-link to="#">
                 <v-btn flat>Category</v-btn>
             </router-link>
 
@@ -22,7 +18,9 @@
                 <v-btn flat>Login</v-btn>
             </router-link>
 
-
+            <router-link to="/signup">
+                <v-btn flat>Cadastrar</v-btn>
+            </router-link>
 
         </div>
 

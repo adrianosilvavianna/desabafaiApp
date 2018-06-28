@@ -26,6 +26,10 @@
 
         </v-form>
 
+        <router-link to="/signup">
+            <v-btn flat>Sign Up</v-btn>
+        </router-link>
+
     </v-container>
 
 </template>
@@ -41,9 +45,16 @@
             }
         },
 
+        created(){
+            if(User.loggedIn()){
+                this.$router.push({name:'forum'})
+            }
+        },
+
         methods:{
             login(){
                 User.login(this.form)
+                this.$router.push({name:'forum'})
             }
         },
     }

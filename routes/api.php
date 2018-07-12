@@ -15,7 +15,7 @@ Route::group([
 
 });
 
-Route::group(['middleware' => 'jwt'], function(){
+Route::group([], function(){
 
     Route::apiResource("/question",                  "QuestionController");
     Route::apiResource("/category",                  "CategoryController");

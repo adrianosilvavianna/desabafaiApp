@@ -3,7 +3,11 @@
         <v-layout row wrap>
             <v-flex xs8>
 
-                <question></question>
+                <question
+                v-for="question in questions"
+                :key="question.path"
+                :data="question"
+                ></question>
 
             </v-flex>
         </v-layout>

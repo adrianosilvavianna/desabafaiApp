@@ -16,9 +16,7 @@
                         <v-btn color="teal">5 Replies</v-btn>
                     </v-card-title>
 
-                    <v-card-text v-html="data.body">
-
-                    </v-card-text>
+                    <v-card-text v-html="data.body"></v-card-text>
 
                     <!--<v-card-actions>-->
                         <!--<v-btn flat color="orange">Share</v-btn>-->

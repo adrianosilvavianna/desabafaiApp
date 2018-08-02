@@ -59,3 +59,13 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 "# desabafaiApp" 
+
+## Docker
+
+ - Docker Install -> https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
+
+docker-compose build 
+docker-compose up --force-recreate
+docker exec -it dbf_php-fpm bash
+
+Você terá acesso em http://localhost:2000
